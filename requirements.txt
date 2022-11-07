@@ -7,3 +7,4 @@ xgboost==1.7.1
 mlflow==1.30.0
 pyarrow==10.0.0
 fastparquet==0.8.3
+hyperopt==0.2.7
