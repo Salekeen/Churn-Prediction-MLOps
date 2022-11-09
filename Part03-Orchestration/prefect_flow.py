@@ -1,19 +1,15 @@
-import pandas as pd
 import pickle
 
-from sklearn.feature_extraction import DictVectorizer
-from sklearn.linear_model import LinearRegression, Lasso, Ridge
-from sklearn.metrics import mean_squared_error
-
-import xgboost as xgb
-
-from hyperopt import fmin, tpe, hp, STATUS_OK, Trials
-from hyperopt.pyll import scope
-
 import mlflow
-
+import pandas as pd
+import xgboost as xgb
+from hyperopt import STATUS_OK, Trials, fmin, hp, tpe
+from hyperopt.pyll import scope
 from prefect import flow, task
 from prefect.task_runners import SequentialTaskRunner
+from sklearn.feature_extraction import DictVectorizer
+from sklearn.linear_model import Lasso, LinearRegression, Ridge
+from sklearn.metrics import mean_squared_error
 
 
 def read_dataframe(filename):
